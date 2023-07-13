@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
-*Lets Print Hello
+*main - this is the main function
+*
+*return zero - sucess
 */
 
 int main(void)
