@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
-*main - this is the main function
+*main - Entry point
 *
-*return zero - sucess
+*Return: Awalys zero
 */
 
 int main(void)
