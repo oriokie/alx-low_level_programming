@@ -1,21 +1,23 @@
 #include <stdio.h>
-/**
-  *main - Main Block
-  *Description: Lets output letters using putchar
-  *Return: 0 as success
-  */
 
+/**
+ * main - Entry point
+ *
+ * Description: Prints the alphabet in lowercase using putchar
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-		char letter = 'a';
+	char letter = 'a';
 
-		while (letter <= 'z')
-		{
-				putchar(letter);
-				letter++;
-		}
+	while (letter <= 'z')
+	{
+		putchar(letter);
+		letter++;
+	}
 
-		putchar('\n');
+	putchar('\n');
 
-		return (0);
+	return (0);
 }
