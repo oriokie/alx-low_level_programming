@@ -12,27 +12,36 @@
  */
 int main(void)
 {
-	int num1, num2;
+	int i, j;
+	int a, b, c, d;
 
-	for (num1 = 0; num1 <= 99; num1++)
+	for (i = 0; i < 100; i++)
 	{
-		for (num2 = num1 + 1; num2 <= 99; num2++)
-		{
-			if (num1 != num2)
-			{
-				putchar((num1 / 10) + '0');
-				putchar((num1 % 10) + '0');
-				putchar(',');
-				putchar((num2 / 10) + '0');
-				putchar((num2 % 10) + '0');
+		a = i / 10; /* doubles fnum */
+		b = i % 10; /* singles fnum */
 
-				if (num1 != 98 || num2 != 99)
-					putchar(',');
+		for (j = 0; j < 100; j++)
+		{
+			c = j / 10; /* doubles snum */
+			d = j % 10; /* singles snum */
+
+			if (a < c || (a == c && b < d))
+			{
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(32);
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8))
+				{
+					putchar(44);
+					putchar(32);
+				}
 			}
 		}
 	}
-
-	putchar('\n');
+	putchar(10);
 
 	return (0);
 }
