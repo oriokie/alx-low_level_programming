@@ -3,18 +3,26 @@
 /**
  * main - Entry point
  *
- * Description: Prints all possible combinations of single-digit numbers
- *              separated by commas and spaces, followed by a new line.
+ * Description: Prints all single-digit numbers separated by commas
+ *              and spaces, followed by a new line.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	for (char digit = '0'; digit <= '9'; digit++)
+	int digit = 0;
+
+	while (digit < 10)
 	{
-		putchar(',');
-		putchar(' ');
-		putchar(digit);
+		putchar(digit + '0');
+
+		if (digit < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+
+		digit++;
 	}
 
 	putchar('\n');
