@@ -4,7 +4,7 @@
 *@n: integer to be checked
 * Return: Always 0
 */
-int_abs(int n)
+int _abs(int n)
 {
 	if (n >= 0)
 		return (n);
