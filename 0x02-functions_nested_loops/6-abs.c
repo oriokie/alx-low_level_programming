@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* int_abs - Function computes the abosulte value of an integer
+* _abs - Function computes the abosulte value of an integer
 *@n: integer to be checked
 * Return: Always 0
 */
