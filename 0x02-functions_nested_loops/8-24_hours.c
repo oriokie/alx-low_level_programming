@@ -3,7 +3,7 @@
 * jack_bauer - function for printing every minute
 * Return: Always zero
 */
-void jack_bauer(void);
+void jack_bauer(void)
 {
 	for (int a = 0; a <= 23, a++)
 	{
