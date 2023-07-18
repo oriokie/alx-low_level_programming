@@ -1,8 +1,9 @@
 #include "main.h"
+
 /**
-* main - lets print 10 times
-* print_alphabet_x10 - prints 10 abc
-* Return : success
+* print_alphabet_x10 - Prints ten lines of abc using _putchar
+*
+* Return: Always zero
 */
 void print_alphabet_x10(void)
 {
