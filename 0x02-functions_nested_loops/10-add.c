@@ -5,7 +5,7 @@
 * @b: second variable
 * Return: Always Zero
 */
-int add (int a, int b)
+int add(int a, int b)
 {
 	int sum;
 
