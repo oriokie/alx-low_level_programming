@@ -2,30 +2,25 @@
 
 /**
  * main - Prints the first 98 Fibonacci numbers
- *
- * Return: Always 0
+ * Return: 0
  */
 int main(void)
 {
-	unsigned long int prev = 1;
-	unsigned long int curr = 2;
-	unsigned long int next;
-	int count = 2;
+	unsigned long long int prev = 1;
+	unsigned long long int curr = 2;
+	unsigned long long int next;
+	int count;
 
-	printf("%lu, %lu", prev, curr);
+	printf("%llu, %llu", prev, curr);
 
-	while (count < 98)
+	for (count = 3; count <= 98; count++)
 	{
 		next = prev + curr;
-		printf(", %lu", next);
-
+		printf(", %llu", next);
 		prev = curr;
 		curr = next;
-		count++;
 	}
 
 	printf("\n");
-
-	return (0);
+	return 0;
 }
-
