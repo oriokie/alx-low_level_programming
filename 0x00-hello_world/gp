@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if a filename is provided as a command-line argument
+if [ $# -eq 0 ]; then
+  echo "Error: Please provide a filename as a command-line argument."
+  exit 1
+fi
+
+filename="$1"
+
+chmod u+x $filename
+
+# Prompt for the commit message
+read -p "Enter the commit message: " message
+
+# Perform 'git add' operation
+git add "$filename"
+
+# Perform 'git commit' operation
+git commit -m "$message"
+
+# Perform 'git push' operation
+git push
+
