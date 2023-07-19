@@ -1,31 +1,47 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - fibonacci <3
  *
- * Description: Prints the first 98 Fibonacci numbers, separated by commas
- *              followed by a space.
+ * Purpose - no hardcode
  *
- * Return: Always 0 (Success)
+ * Return:  (Success)
  */
+
 int main(void)
 {
-	unsigned int a = 1;
-	unsigned int b = 2;
-	unsigned int c;
-	int count;
+	unsigned long int i;
+	unsigned long int prev = 1;
+	unsigned long int nxt = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int prev1;
+	unsigned long int prev2;
+	unsigned long int nxt1;
+	unsigned long int nxt2;
 
-	printf("%u, %u", a, b);
+	printf("%lu", prev);
 
-	for (count = 3; count <= 98; count++)
+	for (i = 1; i < 91; i++)
 	{
-		c = a + b;
-		printf(", %u", c);
-		a = b;
-		b = c;
+		printf(", %lu", nxt);
+		nxt += prev;
+		prev = nxt - prev;
 	}
 
-	printf("\n");
+	prev1 = (prev / l);
+	prev2 = (prev % l);
+	nxt1 = (nxt / l);
+	nxt2 = (nxt % l);
 
+	for (i = 92; i < 99; ++i)
+	{
+		printf(", %lu", nxt1 + (nxt2 / l));
+		printf("%lu", nxt2 % l);
+		nxt1 = nxt1 + prev1;
+		prev1 = nxt1 - prev1;
+		nxt2 = nxt2 + prev2;
+		prev2 = nxt2 - prev2;
+	}
+	printf("\n");
 	return (0);
 }
