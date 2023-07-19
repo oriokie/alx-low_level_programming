@@ -6,17 +6,17 @@
  */
 int main(void)
 {
-	unsigned long long int prev = 1;
-	unsigned long long int curr = 2;
-	unsigned long long int next;
+	unsigned long prev = 1;
+	unsigned long curr = 2;
+	unsigned long next;
 	int count;
 
-	printf("%llu, %llu", prev, curr);
+	printf("%lu, %lu", prev, curr);
 
 	for (count = 3; count <= 98; count++)
 	{
 		next = prev + curr;
-		printf(", %llu", next);
+		printf(", %lu", next);
 		prev = curr;
 		curr = next;
 	}
@@ -24,3 +24,4 @@ int main(void)
 	printf("\n");
 	return (0);
 }
+
