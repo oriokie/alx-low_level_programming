@@ -8,17 +8,16 @@ void more_numbers(void)
 	int i, n;
 
 	n = 0;
-	while (n <= 10)
+	while (n < 10)
 	{
 		for (i = 0; i <= 14; i++)
 		{
 			if (i > 9)
 				_putchar(0 + (i / 10));
 			_putchar(0 + (i % 10));
-			else
-				_putchar(i);
 		}
-	_putchar('\n');
-	n++;
+		n++;
+		if (n < 10)
+			_putchar('\n');
 	}
 }
