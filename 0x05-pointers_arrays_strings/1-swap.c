@@ -1,19 +1,13 @@
 #include "main.h"
 /**
-* _strlen - returns the length of a string
-* @s: string to be counted
-* Return: Awalys 0
+* swap_int - swaps two integers
+* @a: value 1
+* @b: value 2
+* Return: no return
 */
-int _strlen(char *s)
+void swap_int(int *a, int *b)
 {
-	int i, count;
-
-	count = 0;
-
-	while (*s != '\0')
-	{
-		count++;
-		s++;
-	}
-	return (count);
+	int x = *a;
+	*a = *b;
+	*b = x;
 }
