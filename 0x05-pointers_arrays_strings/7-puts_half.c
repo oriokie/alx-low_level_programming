@@ -20,7 +20,7 @@ void puts_half(char *str)
 
 		for (; *str != '\0'; start++)
 			_putchar(str[start]);
-	_putchar('\n\);
+	_putchar('\n');
 }
 /**
 * _strlen - Returns the length of a string.
