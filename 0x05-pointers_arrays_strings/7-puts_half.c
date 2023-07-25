@@ -5,17 +5,11 @@
 */
 void puts_half(char *str)
 {
-	int start, count = 0, int i;
+	int start, count = 0;
 
 	while (str[count] != '\0')
 	{
 		count++;
-	}
-	char copy[count + 1];
-
-	for (i = 0; i <= count; i++)
-	{
-		copy[i] = str[i];
 	}
 	if (count % 2 == 0)
 	{
@@ -24,12 +18,12 @@ void puts_half(char *str)
 	}
 	else
 	{
-		start = (count - 1) / 2;
+		start = (count + 1) / 2;
 
 	}
-	while (copy[start] != '\0')
+	while (str[start] != '\0')
 	{
-		_putchar(copy[start]);
+		_putchar(str[start]);
 		start++;
 	}
 	_putchar('\n');
