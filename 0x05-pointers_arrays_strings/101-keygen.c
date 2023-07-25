@@ -15,7 +15,7 @@ void generatepass(int length)
 {
 	int i;
 
-	for (i = 0; i < length; i++)
+	for ( = 0; i < length; i++)
 	{
 		printf("%c", getRandomChar());
 	}
@@ -24,7 +24,7 @@ void generatepass(int length)
 
 int main(void)
 {
-	int passwordLength = 10;
+	int passwordLength = 15;
 
 	srand((unsigned int)time(NULL));
 	generatepass(passwordLength);
