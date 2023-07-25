@@ -15,7 +15,7 @@ void generatepass(int length)
 {
 	int i;
 
-	for ( = 0; i < length; i++)
+	for (i = 0; i < length; i++)
 	{
 		printf("%c", getRandomChar());
 	}
