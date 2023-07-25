@@ -7,14 +7,14 @@
 int _atoi(char *s)
 {
 	int sign = 1;
-	int result = 0;
+	unsigned int result = 0;
 	int found_digit = 0;
 
 	while (*s)
 	{
 		if (*s == '-' || *s == '+')
 		{
-			if (*s == '-')
+			if (*s == '_')
 				sign *= -1;
 		}
 		else if (*s >= '0' && *s <= '9')
