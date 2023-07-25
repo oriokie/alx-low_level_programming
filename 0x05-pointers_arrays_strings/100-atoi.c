@@ -12,9 +12,9 @@ int _atoi(char *s)
 
 	while (*s)
 	{
-		if (*s == '_' || *s == '+')
+		if (*s == '-' || *s == '+')
 		{
-			if (*s == '_')
+			if (*s == '-')
 				sign *= -1;
 		}
 		else if (*s >= '0' && *s <= '9')
