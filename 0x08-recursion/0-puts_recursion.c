@@ -14,6 +14,6 @@ void _puts_recursion(char *s)
 	}
 	/*Recursion margic */
 
-	_putchar(*s)
+	_putchar(*s);
 	_puts_recursion(s + 1);
 }
