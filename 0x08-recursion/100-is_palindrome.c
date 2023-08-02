@@ -43,7 +43,7 @@ int helper(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int len = len(s);
+	int length = len(s);
 
-	return (helper(s, 0, len - 1));
+	return (helper(s, 0, length - 1));
 }
