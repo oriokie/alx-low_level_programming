@@ -37,6 +37,6 @@ int is_prime_number(int n)
 	}
 	else
 	{
-		return (helper(n, div + 1));
+		return (helper(n, 2));
 	}
 }
