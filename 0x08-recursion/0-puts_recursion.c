@@ -10,7 +10,7 @@ void _puts_recursion(char *s)
 	if (*s == '\n')
 	{
 		_putchar('\n');
-		return (0);
+		return;
 	}
 	/*Recursion margic */
 
