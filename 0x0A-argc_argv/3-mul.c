@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - This is the entry point for the function that multiplies two numbers
  * @argc: count of the parameters
