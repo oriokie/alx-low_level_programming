@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * main - This is the entry point 
+ * main - This is the entry point
  * @argc: count of arguments
  * @argv: the arguments
  * Return: Zero for success
