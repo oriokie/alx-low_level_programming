@@ -18,8 +18,8 @@ int **alloc_grid(int width, int height)
 	int **arr;
 	int i, j;
 
-	check_null(width);
-	check_null(height);
+	check_null(&width);
+	check_null(&height);
 
 	arr = (int **) malloc(sizeof(int *) * height);
 
@@ -52,7 +52,7 @@ int **alloc_grid(int width, int height)
  * @a: the int to be checked
  * Return: NULL
  */
-void check_null(int a)
+void check_null(int *a)
 {
 	if (a <= 0)
 	{
