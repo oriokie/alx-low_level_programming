@@ -33,11 +33,11 @@ int calculate_total_length(int ac, char **av)
  */
 char *argstostr(int ac, char **av)
 {
+	int size, k = 0, i, j;
+	char *arg;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	int size;
-	char *arg;
 
 	size = calculate_total_length(ac, av);
 
@@ -45,10 +45,7 @@ char *argstostr(int ac, char **av)
 
 	if (arg == NULL)
 		return (NULL);
-
-	int k = 0;
-	int i, j;
-
+	
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
