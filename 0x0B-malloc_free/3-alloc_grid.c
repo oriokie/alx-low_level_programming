@@ -1,13 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * check_null - prototype
- * @a: int
- * Return: NULL
- */
-int check_null(int a);
-
-/**
  * *alloc_grid - function that creates a two dimensional array of int
  * @width: the width of the matrix or array
  * @height: the height of the array
@@ -18,8 +11,8 @@ int **alloc_grid(int width, int height)
 	int **arr;
 	int i, j;
 
-	check_null(width);
-	check_null(height);
+	if (height <= 0 || width <= 0)
+		return (NULL);
 
 	arr = (int **) malloc(sizeof(int *) * height);
 
@@ -46,16 +39,4 @@ int **alloc_grid(int width, int height)
 		}
 	}
 	return (arr);
-}
-/**
- * check_null - function that checks for a null height or width
- * @a: the int to be checked
- * Return: NULL
- */
-int check_null(int a)
-{
-	if (a <= 0)
-	{
-		return (NULL);
-	}
 }
