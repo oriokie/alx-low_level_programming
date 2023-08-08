@@ -54,8 +54,8 @@ int **alloc_grid(int width, int height)
  */
 void check_null(int *a)
 {
-	if (a <= 0)
+	if (*a <= 0)
 	{
-		return (NULL);
+		*a = 0;
 	}
 }
