@@ -41,7 +41,7 @@ char *argstostr(int ac, char **av)
 
 	size = calculate_total_length(ac, av);
 
-	*arg = (char *)malloc(sizeof(char) * (size + 1));
+	arg = malloc((sizeof(char) * size) + 1);
 
 	if (arg == NULL)
 		return (NULL);
