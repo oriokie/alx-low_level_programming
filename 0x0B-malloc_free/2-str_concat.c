@@ -14,11 +14,6 @@ int counter(char *a);
  */
 char *str_concat(char *s1, char *s2)
 {
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
 	int size_s1, size_s2, total_size;
 	char *arr = NULL;
 	int k = 0;
@@ -26,6 +21,13 @@ char *str_concat(char *s1, char *s2)
 	size_s1 = counter(s1);
 	size_s2 = counter(s2);
 	total_size = size_s1 + size_s2;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+
 	arr = malloc(sizeof(char) * (total_size + 1));
 	if (arr != NULL)
 	{
