@@ -14,6 +14,11 @@ int counter(char *a);
  */
 char *str_concat(char *s1, char *s2)
 {
+	if (s1 == NULL)
+		s1 == "";
+	if (s2 == NULL)
+		s2 == "";
+
 	int k, size_s1, size_s2, total_size;
 	char *arr = NULL;
 
