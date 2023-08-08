@@ -19,10 +19,8 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	int k, size_s1, size_s2, total_size;
+	int k = 0, size_s1, size_s2, total_size;
 	char *arr = NULL;
-
-	k = 0;
 
 	size_s1 = counter(s1);
 	size_s2 = counter(s2);
