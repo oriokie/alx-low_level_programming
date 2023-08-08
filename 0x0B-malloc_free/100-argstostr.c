@@ -1,36 +1,57 @@
 #include "main.h"
 #include <stdlib.h>
-
+/**
+ * calculate_total_length - functions that calculates the total lenght of the
+ * arguments
+ * @ac: the count of arguments
+ * @av: the pointer to the array
+ * Return: size
+ */
 int calculate_total_length(int ac, char **av)
 {
 	int size = 0;
-	for (int i = 0; i < ac; i++)
+	int i;
+
+	for (i = 0; i < ac; i++)
 	{
 		int j = 0;
+
 		while (av[i][j])
 		{
 			size++;
 			j++;
 		}
-		size++; // For newline character
+		size++;
 	}
-	return size;
+	return (size);
 }
-
+/**
+ * argstostr - functions that conatenates all the arguments of my program
+ * @ac: count of arguments
+ * @av: pointer to the size of the array
+ * Return: pointer to the new string
+ */
 char *argstostr(int ac, char **av)
 {
 	if (ac == 0 || av == NULL)
-		return NULL;
+		return (NULL);
 
-	int size = calculate_total_length(ac, av);
-	char *arg = (char *)malloc(sizeof(char) * (size + 1)); // +1 for null terminator
+	int size;
+	char *arg;
+
+	size = calculate_total_length(ac, av);
+
+	*arg = (char *)malloc(sizeof(char) * (size + 1));
+
 	if (arg == NULL)
-		return NULL;
+		return (NULL);
 
 	int k = 0;
-	for (int i = 0; i < ac; i++)
+	int i, j;
+
+	for (i = 0; i < ac; i++)
 	{
-		for (int j = 0; av[i][j]; j++)
+		for (j = 0; av[i][j]; j++)
 		{
 			arg[k] = av[i][j];
 			k++;
@@ -40,6 +61,6 @@ char *argstostr(int ac, char **av)
 	}
 	arg[size] = '\0';
 
-	return arg;
+	return (arg);
 }
 
