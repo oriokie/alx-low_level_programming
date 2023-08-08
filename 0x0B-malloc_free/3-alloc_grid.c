@@ -5,7 +5,7 @@
  * @a: int
  * Return: NULL
  */
-int check_null(int *a);
+int check_null(int a);
 
 /**
  * *alloc_grid - function that creates a two dimensional array of int
@@ -18,8 +18,8 @@ int **alloc_grid(int width, int height)
 	int **arr;
 	int i, j;
 
-	check_null(&width);
-	check_null(&height);
+	check_null(width);
+	check_null(height);
 
 	arr = (int **) malloc(sizeof(int *) * height);
 
@@ -52,9 +52,9 @@ int **alloc_grid(int width, int height)
  * @a: the int to be checked
  * Return: NULL
  */
-int check_null(int *a)
+int check_null(int a)
 {
-	if (*a <= 0)
+	if (a <= 0)
 	{
 		return (NULL);
 	}
