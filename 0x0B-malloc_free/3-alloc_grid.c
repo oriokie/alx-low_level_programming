@@ -5,7 +5,7 @@
  * @a: int
  * Return: NULL
  */
-void check_null(int a);
+void check_null(int *a);
 
 /**
  * *alloc_grid - function that creates a two dimensional array of int
