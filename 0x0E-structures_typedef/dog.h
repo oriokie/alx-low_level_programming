@@ -5,7 +5,7 @@
  * struct dog - struct declaration for my dog
  * @name: the name of my dog
  * @age: the age of the dog
- * @ownner: the owner
+ * @owner: the owner
  */
 typedef struct dog
 {
