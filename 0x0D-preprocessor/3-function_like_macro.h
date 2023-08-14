@@ -1,12 +1,4 @@
-#ifndef ABSOLUTE
-#define ABS(x) \
-	do { \
-		int result; \
-		if ((x) < 0) {\
-			result = -(x); \
-		} else {\
-			result = (x); \
-		}\
-		result; \
-	} while (0)
+#ifndef ABS
+#define ABS
+#define ABS(x) ((x) < (0) ? ((x) * -(1)) : (x))
 #endif
