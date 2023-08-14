@@ -1,5 +1,6 @@
 #ifndef MY_DOG
 #define MY_DOG
+#include "dog.h"
 #include <stdio.h>
 /**
  * print_dog - function that creates the struct
@@ -15,3 +16,5 @@ void print_dog(struct dog *d)
 		printf("Owner: %s\n", (d->owner) ? d->owner : "(nil)");
 	}
 }
+
+#endif
