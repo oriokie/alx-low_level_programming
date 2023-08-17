@@ -31,6 +31,12 @@ int main(int argc, char *argv[])
 		return (99);
 	}
 
+	if (( operator == '/' || operator '%') && operator == 0)
+	{
+		print("Error\n");
+		exit(100);
+	}
+
 	printf("%d\n", operation(num1, num2));
 
 	return (0);
