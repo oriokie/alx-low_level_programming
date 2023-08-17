@@ -21,7 +21,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 		while (counter < size)
 		{
-			if (cmp(array[counter]) != 0)
+			if (cmp(array[counter]))
 			{
 				return (counter);
 				counter++;
