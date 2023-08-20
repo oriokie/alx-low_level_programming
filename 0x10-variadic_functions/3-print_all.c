@@ -1,52 +1,48 @@
 #include "variadic_functions.h"
 /**
  * print_int - function that prints integers
- * @list: List of arguments
- * @sep: Separator
+ * @int_var: List of arguments
  */
-void print_int(va_list list, char *sep)
+void print_int(va_list int_var)
 {
-	printf("%s%d", sep, va_arg(list, int));
+	printf("%i", var_arg(int_var, int));
 }
 /**
  * print_char - Function that prints characters
  * @list: Character arguments
- * @sep: Separator
  */
 
-void print_char(va_list list, char *sep)
+void print_char(va_list list)
 {
-	printf("%s%c", sep, va_arg(list, int));
+	printf("%c", var_arg(list, int);
 }
 
 /**
  * print_string - Function that prints strings
- * @list: List of arguments
- * @sep: Separator
+ * @str_var: List of arguments
  */
 
-void print_string(va_list list, char *sep)
+void print_string(va_list str_var)
 {
 	char *s;
 
 	/* assign string to pointer */
-	s = va_arg(list, char *);
+	s = va_arg(str_var, char *);
 
 	if (s == NULL)
 		s = "(nil)";
 
-	printf("%s%s", sep, s);
+	printf("%s", s);
 }
 
 /**
  * print_float - Function that prints floats
- * @list: List of arguments
- * @sep: Separator
+ * @float_var: List of arguments
  */
 
-void print_float(va_list list, char *sep)
+void print_float(va_list float_var)
 {
-	printf("%s%f", sep, va_arg(list, double));
+	printf("%f", var_arg(float_var, double);
 }
 
 /**
@@ -57,41 +53,38 @@ void print_float(va_list list, char *sep)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	char *sep;
 	int i, j;
-
-	format_function formatFunctions[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-		{0, NULL}
-	};
+	char *comma = "";
 
 	va_start(args, format);
 
+	format_function form[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
+
 	i = 0;
 
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
-		j = 0;
-
-		while (j < 4)
+		count = 0;
+		while (count < 4)
 		{
-			if (format[i] == formatFunctions[j].type)
+			if (format[i] == *form[j].formatter)
 			{
-				formatFunctions[j].func(args);
-				if (format[i + 1] != '\0')
-					printf(", ");
-				break;
-
+				print("%s", comma);
+				form[j].func(args);
+				comma = ", ";
 			}
-			j++;
+			count++;
 		}
 		i++;
 	}
-
+	va_end(arg);
 	printf("\n");
-
-	va_end(args);
 }
+
+
