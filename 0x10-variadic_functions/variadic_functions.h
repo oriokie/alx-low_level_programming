@@ -11,7 +11,7 @@
  */
 typedef struct formatter
 {
-	char type;
+	char *type;
 	void (*func)(va_list);
 } format_function;
 

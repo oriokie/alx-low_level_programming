@@ -5,7 +5,7 @@
  */
 void print_int(va_list int_var)
 {
-	printf("%i", var_arg(int_var, int));
+	printf("%i", va_arg(int_var, int));
 }
 /**
  * print_char - Function that prints characters
@@ -14,7 +14,7 @@ void print_int(va_list int_var)
 
 void print_char(va_list list)
 {
-	printf("%c", var_arg(list, int);
+	printf("%c", va_arg(list, int));
 }
 
 /**
@@ -42,7 +42,7 @@ void print_string(va_list str_var)
 
 void print_float(va_list float_var)
 {
-	printf("%f", var_arg(float_var, double);
+	printf("%f", va_arg(float_var, double));
 }
 
 /**
@@ -53,7 +53,7 @@ void print_float(va_list float_var)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, j;
+	int i, count;
 	char *comma = "";
 
 	va_start(args, format);
@@ -71,19 +71,20 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		count = 0;
-		while (count < 4)
+		while (form[count].type)
 		{
-			if (format[i] == *form[j].formatter)
+			if (format[i] == *form[count].type)
 			{
-				print("%s", comma);
-				form[j].func(args);
+				printf("%s", comma);
+				form[count].func(args);
 				comma = ", ";
+				break;
 			}
 			count++;
 		}
 		i++;
 	}
-	va_end(arg);
+	va_end(args);
 	printf("\n");
 }
 
