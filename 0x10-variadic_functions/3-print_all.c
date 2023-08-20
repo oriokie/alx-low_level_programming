@@ -50,14 +50,9 @@ void print_float(va_list float_var)
  * @format: The list of variable arguments
  */
 
+
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int i, count;
-	char *comma = "";
-
-	va_start(args, format);
-
 	format_function form[] = {
 		{"c", print_char},
 		{"i", print_int},
@@ -66,7 +61,13 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 
+	va_list args;
+	int i, count;
+	char *comma = "";
+
 	i = 0;
+
+	va_start(args, format);
 
 	while (format && format[i])
 	{
