@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <list.h>
+#include "lists.h"
 /**
  * print_list - function that prints all the elements in the given list
  * @h: the pointer to the list being printed
@@ -18,7 +18,7 @@ size_t print_list(const list_t *h)
 			printf("[%u] %s\n", h->len, h->str);
 
 		h = h->next;
-		count++
+		count++;
 	}
 	return (count);
 }
