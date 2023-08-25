@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * *add_node - This function adds a new node to a linked listt
  * @head: The beginning of the list
