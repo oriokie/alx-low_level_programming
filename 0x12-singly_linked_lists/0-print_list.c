@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 /**
  * print_list - function that prints all the elements in the given list
@@ -10,7 +9,7 @@ size_t print_list(const list_t *h)
 {
 	unsigned int count = 0;
 
-	while (h != NULL)
+	while (h)
 	{
 		if (h->str == NULL)
 			printf("[0] (nill)\n");
