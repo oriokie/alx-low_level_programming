@@ -10,7 +10,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	/* counter for moving the pointer */
 	unsigned int counter;
-	listint_t *tmp;
 
 	counter = 0;
 
@@ -19,10 +18,11 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		return (NULL);
 
 	/* transverse the list to the nth node */
-	for (; counter < index; counter++)
+	for (; counter < index && head != NULL; counter++)
 	{
-		tmp = head->next;
+		/*move the head pointer */
+		head = head->next;
 	}
-	return (tmp);
+	return (head);
 }
 
