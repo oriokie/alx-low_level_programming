@@ -1,43 +1,77 @@
 #include "lists.h"
+
+const listint_t *find_loop(const listint_t *head);
 /**
- * print_listint_safe - function that prints a linked list
- * @head: pointer to the head
+ * find_listint_loop - finds the starting point of a loop in a listint_t list
+ * @head: pointer to the head of the list
  *
- * Return: 98 for failed
+ * Return: pointer to the starting point of the loop, or NULL
+ */
+const listint_t *find_loop(const listint_t *head)
+{
+	const listint_t *slow, *fast, *start;
+
+	if (head == NULL)
+		return (NULL);
+
+	slow = head;
+	fast = head;
+	while (fast && fast->next)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
+		{
+			start = head;
+			while (start != slow)
+			{
+				start = start->next;
+				slow = slow->next;
+			}
+			return (start);
+		}
+	}
+
+	return (NULL);
+}
+
+/**
+ * print_listint_safe - prints a listint_t linked list
+ * @head: pointer to the head of the list
+ *
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	/*Floyd's Tortoise & Hare */
-	/*
-	 * Fast Pointer and Slow Pointer can help to checkf a full cycle
-	 * It happens in linear time O(n) when the pointers meet
-	 */
-	const listint_t *slow = head, *fast = head;
 	size_t count = 0;
+	const listint_t *start;
 
-	if (fast == NULL && slow == NULL)
+	if (head == NULL)
 		exit(98);
 
-	while (fast != NULL && fast->next != NULL)
+	start = find_loop(head);
+
+	while (head != start)
 	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
 		count++;
+	}
 
-		slow = slow->next;
-		fast = fast->next->next;
-
-		/* check if the fast and slow pointers are meeting */
-		if (slow == fast)
+	if (start)
+	{
+		printf("[%p] %d\n", (void *)start, start->n);
+		count++;
+		start = start->next;
+		while (start != head)
 		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			exit(98);
+			printf("[%p] %d\n", (void *)start, start->n);
+			start = start->next;
+			count++;
 		}
+		printf("-> [%p] %d\n", (void *)start, start->n);
 	}
-	/* if there is no loop, print the remaining node */
-	if (slow)
-	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		count++;
-	}
+
 	return (count);
 }
+
