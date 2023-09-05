@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 	 * open file and flag it to write to the file, create it if  doesn't exist
 	 * truncate it if it does
 	 */
-	open_file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	open_file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 
 	if (open_file == -1)
 		return (-1);
