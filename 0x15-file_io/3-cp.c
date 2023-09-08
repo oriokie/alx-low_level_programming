@@ -7,19 +7,19 @@
  *
  * Return: None
  */
-void error_exit (int code, const char *format, const char *arg)
+void error_exit(int code, const char *format, const char *arg)
 {
 	dprintf(STDERR_FILENO, format, arg);
 	exit(code);
 }
 /**
  * copy_file - function that copies a file and then appends to another file
- * @source_file - file to be copied
- * @dest_file - file content to be appended
- * 
+ * @source_file: file to be copied
+ * @dest_file: file content to be appended
+ *
  * Return: 0 for success
  */
-int copy_file (const char *source_file, const char *dest_file)
+int copy_file(const char *source_file, const char *dest_file)
 {
 	int file_from, file_to;
 	ssize_t bytes_read, bytes_written;
@@ -64,7 +64,7 @@ int copy_file (const char *source_file, const char *dest_file)
  *
  * Return: 0 for success
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	const char *source_file;
 	const char *destination_file;
@@ -80,6 +80,5 @@ int main (int argc, char *argv[])
 
 
 	copy_file(source_file, destination_file);
-	
-		return (0);
+	return (0);
 }
