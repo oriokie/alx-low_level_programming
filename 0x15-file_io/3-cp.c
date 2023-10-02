@@ -49,7 +49,7 @@ int copy_file(const char *source_file, const char *dest_file)
 		}
 	}
 	if (bytes_read == -1)
-		error_exit(98, "Error: Can't read from file %s\n", file_from);
+		error_exit(98, "Error: Can't read from file %s\n", source_file);
 	if (close(file_from) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from), exit(100);
 	if (close(file_to) == -1)
