@@ -72,7 +72,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		error_exit(97, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		exit(97);
 	}
 
 	source_file = argv[1];
