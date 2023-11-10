@@ -26,8 +26,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->prev = NULL;
 	if (idx == 0) /* insert the new node at the beginning of the list */
 	{
-		*h = new;
-		return (new);
+		new = add_dnodeint(h, n);
 	}
 	for (i = 0; i < idx && current != NULL; i++) /* searching for the index */
 	{
