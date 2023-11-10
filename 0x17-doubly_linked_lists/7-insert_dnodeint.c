@@ -26,7 +26,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	if (current == NULL) /* reached the end before we find the index */
 	{
-		free(new);
 		return (NULL);
 	}
 	if (current->next == NULL) /* is the end of the list? */
