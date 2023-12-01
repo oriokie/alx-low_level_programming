@@ -11,6 +11,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* Declaring a pointer to the hash table structure */
 	hash_table_t *hash_table;
 
+	/* Checking if the size is 0 */
+	if (size == 0)
+		return (NULL);
+
 	/* Allocating memory for the hash table structure */
 	hash_table = calloc(1, sizeof(hash_table_t));
 
