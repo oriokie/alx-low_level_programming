@@ -1,6 +1,6 @@
 #!usr/bin/python3
 """
-Island Perimeter Module
+Island Perimeter function
 """
 
 
