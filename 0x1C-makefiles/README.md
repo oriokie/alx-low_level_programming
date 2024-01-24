@@ -16,8 +16,8 @@ Learning Objectives
 - What are variables and how to set and use them
 
 
-# Files
+### Files
 In the following tasks, we are going to use [these files](https://github.com/alx-tools/0x1B.c). We want to compile these only.
 
-# AUTHOR
+### AUTHOR
 Kenyansa Edwin Orioki
